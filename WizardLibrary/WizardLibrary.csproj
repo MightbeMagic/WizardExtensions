@@ -5,16 +5,20 @@
 
 	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-	  
-    <Nullable>enable</Nullable>
+	  <Nullable>enable</Nullable>
 	  <LangVersion>latest</LangVersion>
 	  <DressmakerGameRoot>K:\Applications\Steam\steamapps\common\Dressmaker</DressmakerGameRoot>
 	  <DataDir>$(DressmakerGameRoot)\Dressmaker_Data</DataDir>
-	  <OutputPath>K:\Applications\Steam\steamapps\common\Dressmaker\BepInEx\plugins</OutputPath>
+	  <OutputPath>K:\Applications\Steam\steamapps\common\Dressmaker\BepInEx\plugins\WizardLibrary</OutputPath>
 	  <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
+	  <Reference Include="Newtonsoft.Json">
+		  <HintPath>$(DressmakerGameRoot)\Dressmaker_Data\Managed\Newtonsoft.Json.dll</HintPath>
+		  <Private>false</Private>
+	  </Reference>
 	  <Reference Include="BepInEx">
 		  <HintPath>$(DressmakerGameRoot)\BepInEx\core\BepInEx.dll</HintPath>
 		  <Private>false</Private>
@@ -52,6 +56,10 @@
 		  <HintPath>$(DataDir)\Managed\Assembly-CSharp.dll</HintPath>
 		  <Private>false</Private>
 	  </Reference>
+	  <Reference Include="Unity.TextMeshPro">
+		  <HintPath>$(DataDir)\Managed\Unity.TextMeshPro.dll</HintPath>
+		  <Private>false</Private>
+	  </Reference>
 	  <Reference Include="Framework">
 		  <HintPath>$(DataDir)\Managed\Framework.dll</HintPath>
 		  <Private>false</Private>
@@ -60,7 +68,13 @@
 		  <HintPath>$(DressmakerGameRoot)\Dressmaker_Data\Managed\YarnSpinner.Unity.dll</HintPath>
 		  <Private>false</Private>
 	  </Reference>
+	  <Reference Include="UnityEngine.AudioModule">
+		  <HintPath>$(DressmakerGameRoot)\Dressmaker_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+		  <Private>false</Private>
+	  </Reference>
 
   </ItemGroup>
-
+	<Target Name="CheckGameFolder" BeforeTargets="ResolveReferences">
+		<Error Condition="!Exists('$(DressmakerGameRoot)\Dressmaker.exe')" Text="Set DressmakerGameRoot to the folder containing Dressmaker.exe." />
+	</Target>
 </Project>
