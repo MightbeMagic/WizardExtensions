@@ -13,7 +13,7 @@ namespace WizardLibrary
         [JsonIgnore]
         public string filePath;
         public string mod;
-        public List<NPC> characters;
+        public List<NPC>? characters;
 
         public override string ToString()
         {
@@ -71,11 +71,5 @@ namespace WizardLibrary
         public string name;
         public Dictionary<string, string> expressions;
 
-    }
-    [Serializable]
-    public struct PortraitExpression
-    {
-        public string name;
-        public string filePath;
     }
 }
