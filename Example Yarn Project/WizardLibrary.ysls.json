@@ -1,0 +1,335 @@
+{
+    "version": 2,
+    "commands": [
+        {
+            "yarnName": "CastNight",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.ChangeToNight",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Turns on the Night Background. Does not require a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 6,
+                    "character": 8
+                },
+                "end": {
+                    "line": 7,
+                    "character": 46
+                }
+            },
+            "parameters": []
+        },
+        {
+            "yarnName": "CastDay",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.ChangeToDay",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Turns off the night background, showing the day background. Does not require a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 9,
+                    "character": 8
+                },
+                "end": {
+                    "line": 10,
+                    "character": 44
+                }
+            },
+            "parameters": []
+        },
+        {
+            "yarnName": "Summon",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.SummonNpc",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Changes the portrait and name of the current dialog to a pre defined character from a mod's SpellList.json. Values must match defined ids from a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 12,
+                    "character": 8
+                },
+                "end": {
+                    "line": 13,
+                    "character": 91
+                }
+            },
+            "parameters": [
+                {
+                    "name": "modname",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The mod id specified in a SpellList.json"
+                },
+                {
+                    "name": "npcName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The npc's id specified in a SpellList.json"
+                },
+                {
+                    "name": "expression",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "An expression defined for the npc in the SpellList.json"
+                }
+            ]
+        },
+        {
+            "yarnName": "SummonFamiliar",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.SummonVanillaClient",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Changes the portrait and name of the current dialog to one of the vanilla clients. Does not require a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 15,
+                    "character": 8
+                },
+                "end": {
+                    "line": 16,
+                    "character": 85
+                }
+            },
+            "parameters": [
+                {
+                    "name": "npcName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name of one of the vanilla clients. Case insensitive."
+                },
+                {
+                    "name": "expression",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The expression of one of the vanilla clients. Can be \"happy\", \"sad\", or \"neutral\". Case insensitive."
+                }
+            ]
+        },
+        {
+            "yarnName": "CallForth",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.CallForthName",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Changes the dialog name to a name predefined in a SpellList.json. Values must match defined ids from a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 18,
+                    "character": 8
+                },
+                "end": {
+                    "line": 19,
+                    "character": 76
+                }
+            },
+            "parameters": [
+                {
+                    "name": "modname",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The mod id specified in a SpellList.json"
+                },
+                {
+                    "name": "npcName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The npc's id specified in a SpellList.json"
+                }
+            ]
+        },
+        {
+            "yarnName": "TransmuteFlag",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.TransmuteFlag",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Sets the value of the specified flag in save data. Creates the flag if it does not yet exist. Does not require a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 24,
+                    "character": 8
+                },
+                "end": {
+                    "line": 25,
+                    "character": 85
+                }
+            },
+            "parameters": [
+                {
+                    "name": "modName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The mod id"
+                },
+                {
+                    "name": "flag",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name of this flag variable"
+                },
+                {
+                    "name": "value",
+                    "isParamsArray": false,
+                    "type": "bool",
+                    "documentation": "The value to set the flag to"
+                }
+            ]
+        },
+        {
+            "yarnName": "Disintegrate",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.DisintegrateVariable",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Deletes a variable created through WizardLibrary from save data. Does not require a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 27,
+                    "character": 8
+                },
+                "end": {
+                    "line": 28,
+                    "character": 80
+                }
+            },
+            "parameters": [
+                {
+                    "name": "modName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The mod id"
+                },
+                {
+                    "name": "flag",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name of the variable to destroy"
+                }
+            ]
+        },
+        {
+            "yarnName": "TransmuteCounter",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.TransmuteCounter",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Sets the value of the specified counter in save data. Creates the counter if it does not yet exist. Does not require a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 33,
+                    "character": 8
+                },
+                "end": {
+                    "line": 34,
+                    "character": 90
+                }
+            },
+            "parameters": [
+                {
+                    "name": "modName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The mod id"
+                },
+                {
+                    "name": "counter",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name of this counter variable"
+                },
+                {
+                    "name": "value",
+                    "isParamsArray": false,
+                    "type": "number",
+                    "documentation": "The value to set the counter to"
+                }
+            ]
+        }
+    ],
+    "functions": [
+        {
+            "yarnName": "ScryFlag",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.ScryFlag",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Returns the current value of the specified flag from save data. Does not require a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 21,
+                    "character": 8
+                },
+                "end": {
+                    "line": 22,
+                    "character": 74
+                }
+            },
+            "parameters": [
+                {
+                    "name": "modName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The mod id"
+                },
+                {
+                    "name": "flag",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name given to this flag variable"
+                }
+            ],
+            "return": {
+                "type": "bool"
+            }
+        },
+        {
+            "yarnName": "ScryCounter",
+            "definitionName": "global::WizardLibrary.WizardLibraryCommands.ScryCounter",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Returns the current value of the specified counter from save data. Does not require a SpellList.json",
+            "containsErrors": false,
+            "location": {
+                "start": {
+                    "line": 30,
+                    "character": 8
+                },
+                "end": {
+                    "line": 31,
+                    "character": 75
+                }
+            },
+            "parameters": [
+                {
+                    "name": "modName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The mod id"
+                },
+                {
+                    "name": "counter",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name given to this counter variable"
+                }
+            ],
+            "return": {
+                "type": "number"
+            }
+        }
+    ]
+}

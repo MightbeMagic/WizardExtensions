@@ -1,0 +1,32 @@
+title: Mod_ambrosia_SpiritTest_ambtest_Prompt
+---
+<<set_portrait_neutral>>
+<sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold>i'm rich
+<<SummonFamiliar vivian happy>>
+heyyyyyyyyyy 0
+<<CallForth AMttS cart>>
+<<set_portrait_neutral>>
+<<TransmuteFlag AMttS testFlag true>>
+day
+<<if ScryFlag("AMttS", "testFlag")>>
+   One plus one is true
+<<endif>>
+<<CastNight>>
+night 
+<<CastDay>>
+day
+<<set_portrait_kroq_neutral>>
+kroq neutral
+<<set_portrait_selafie_happy>>
+selafie happy
+<<set_portrait_selafie_sad>>
+selafie sad
+<<set_portrait_selafie_neutral>>
+selafie neutral
+<<set_portrait_neutral>>
+<sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold>i'm rich
+<<set_portrait_neutral>>
+<sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold><sprite name=gold>i'm rich
+
+
+===

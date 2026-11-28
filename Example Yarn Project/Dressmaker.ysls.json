@@ -1,0 +1,620 @@
+{
+    "version": 2,
+    "functions": [
+        {
+            "yarnName": "get_prestige",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.GetPrestige",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Gets the player's current Prestige value",
+            "containsErrors": false,
+            "parameters": [],
+            "return": {
+                "type": "number"
+            }
+        },
+        {
+            "yarnName": "get_relationship",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.GetRelationship",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Gets the player's relationship value for a character",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "characterName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Character name"
+                }
+            ],
+            "return": {
+                "type": "number"
+            }
+        },
+        {
+            "yarnName": "has_flag",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.HasFlag",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Checks for a specified story flag",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "index",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Flag name"
+                }
+            ],
+            "return": {
+                "type": "bool"
+            }
+        },
+        {
+            "yarnName": "has_completed_quest",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.HasCompletedQuest",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Returns if a quest has been completed",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "questName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Quest name"
+                }
+            ],
+            "return": {
+                "type": "bool"
+            }
+        },
+        {
+            "yarnName": "quest_outcome",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.GetQuestOutcome",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Returns the state of a quest",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "questName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Quest name"
+                }
+            ],
+            "return": {
+                "type": "number"
+            }
+        },
+        {
+            "yarnName": "most_used_fabric_type",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.GetMostUsedFabricType",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Returns the fabric used the most for a specific quest",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "questName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Quest name"
+                }
+            ],
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "yarnName": "most_used_color",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.GetMostUsedColor",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Returns the color used the most for a specific quest",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "questName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Quest name"
+                }
+            ],
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "yarnName": "has_item",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.HasItem",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Checks if the player has access to a specific item",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "itemName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name of the item"
+                },
+                {
+                    "name": "itemType",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Type of the item. Checks for \"fabric\", \"pattern\", or \"accessory\""
+                }
+            ],
+            "return": {
+                "type": "bool"
+            }
+        },
+        {
+            "yarnName": "get_variable",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.GetVariable",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Checks the value of a specified story variable",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "variableName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name of the variable"
+                }
+            ],
+            "return": {
+                "type": "number"
+            }
+        },
+        {
+            "yarnName": "poetic_poem",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.PoeticPoem",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "The function used for Marie's poem quest",
+            "containsErrors": false,
+            "parameters": [],
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "yarnName": "poetic_tag1",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.PoeticTag1",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "A function used for Marie's poem quest. Returns Stanza 1 of the poem",
+            "containsErrors": false,
+            "parameters": [],
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "yarnName": "poetic_tag2",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.PoeticTag2",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "A function used for Marie's poem quest. Returns Stanza 2 of the poem",
+            "containsErrors": false,
+            "parameters": [],
+            "return": {
+                "type": "string"
+            }
+        },
+        {
+            "yarnName": "poetic_tag3",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.PoeticTag3",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "A function used for Marie's poem quest. Returns Stanza 3 of the poem",
+            "containsErrors": false,
+            "parameters": [],
+            "return": {
+                "type": "string"
+            }
+        }
+    ],
+    "commands": [
+        {
+            "yarnName": "unlock_achievement",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.UnlockAchievement",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Unlocks specified achievement",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "apiName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name of the achievement"
+                }
+            ]
+        },
+        {
+            "yarnName": "set_flag",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetFlag",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Sets specified flag to a value",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "flagName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "The name of the flag"
+                },
+                {
+                    "name": "value",
+                    "isParamsArray": false,
+                    "type": "bool",
+                    "documentation": "The new value of the flag"
+                }
+            ]
+        },
+        {
+            "yarnName": "skip_tutorial",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SkipTutorial",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "The yarn command used to skip the tutorial",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "set_quest_outcome",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetQuestOutcome",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Sets the current quest to a specific outcome",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "outcomeName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "value of the quest outcome"
+                }
+            ]
+        },
+        {
+            "yarnName": "set_portrait_special",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitSpecial",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Sets the dialog portrait to the special pose of the client character",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "index",
+                    "isParamsArray": false,
+                    "type": "number",
+                    "documentation": "Index of the special portrait"
+                }
+            ]
+        },
+        {
+            "yarnName": "set_portrait_happy",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitHappy",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Sets the dialog portrait to the happy pose of the client character",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "set_portrait_sad",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitSad",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Sets the dialog portrait to the sad pose of the client character",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "set_portrait_neutral",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitNeutral",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Sets the dialog portrait to the neutral pose of the client character",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "set_portrait_kroq_happy",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitKroqHappy",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Enabled Kroq, and Sets the dialog portrait to the special(1) pose",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "set_portrait_kroq_sad",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitKroqSad",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Enabled Kroq, and Sets the dialog portrait to the special(2) pose",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "set_portrait_kroq_neutral",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitSpecial",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Enabled Kroq, and Sets the dialog portrait to the special(0) pose",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "set_portrait_selafie_happy",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitSelafieHappy",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Enabled Kroq, and Sets the dialog portrait to the special(4) pose",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "set_portrait_selafie_sad",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitSelafieSad",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Enabled Kroq, and Sets the dialog portrait to the special(5) pose",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "set_portrait_selafie_neutral",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetPortraitSelafieNeutral",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Enabled Kroq, and Sets the dialog portrait to the special(3) pose",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "cat_return",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.CatReturn",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Brings the cat back",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "cat_hiss",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.CatHiss",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Makes the cat hiss.",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "cat_leave",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.CatLeave",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Makes the cat hiss and leave?",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "cat_pet",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.CatPet",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Pets the cat.",
+            "containsErrors": false,
+            "parameters": []
+        },
+        {
+            "yarnName": "modify_relationship",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.ModifyRelationship",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Changes the relationship value of the current client.",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "delta",
+                    "isParamsArray": false,
+                    "type": "number",
+                    "documentation": "The change of the relationship value"
+                }
+            ]
+        },
+        {
+            "yarnName": "unlock_fabric",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.UnlockFabric",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Unlocks a fabric.",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "delta",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Fabric to be unlocked"
+                }
+            ]
+        },
+        {
+            "yarnName": "unlock_pattern",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.UnlockPattern",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Unlocks a pattern.",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "delta",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Pattern to be unlocked"
+                }
+            ]
+        },
+        {
+            "yarnName": "unlock_accessory",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.UnlockAccessory",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Unlocks a accessory.",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "delta",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Accessory to be unlocked"
+                }
+            ]
+        },
+        {
+            "yarnName": "add_prestige",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.AddPrestige",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Adds an amount of Prestige.",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "amount",
+                    "isParamsArray": false,
+                    "type": "number",
+                    "documentation": "Amount of prestige to be added"
+                }
+            ]
+        },
+        {
+            "yarnName": "add_gold",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.AddGold",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Adds an amount of gold.",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "amount",
+                    "isParamsArray": false,
+                    "type": "number",
+                    "documentation": "Amount of gold to be added"
+                }
+            ]
+        },
+        {
+            "yarnName": "set_variable",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.SetVariable",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Sets a specified story variable to a new value.",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "variableName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Name of the story variable"
+                },
+                {
+                    "name": "value",
+                    "isParamsArray": false,
+                    "type": "number",
+                    "documentation": "New value of the story variable"
+                }
+            ]
+        },
+        {
+            "yarnName": "modify_variable",
+            "definitionName": "global::Assembly-CSharp.YarnBridge.ModifyVariable",
+            "fileName": "",
+            "language": "csharp",
+            "async": false,
+            "documentation": "Changes a specified story variable by the specified value.",
+            "containsErrors": false,
+            "parameters": 
+            [
+                {
+                    "name": "variableName",
+                    "isParamsArray": false,
+                    "type": "string",
+                    "documentation": "Name of the story variable"
+                },
+                {
+                    "name": "delta",
+                    "isParamsArray": false,
+                    "type": "number",
+                    "documentation": "Amount to change the variable by"
+                }
+            ]
+        }
+    ]
+}

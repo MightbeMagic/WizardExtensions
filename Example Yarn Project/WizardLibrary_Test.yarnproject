@@ -1,0 +1,15 @@
+{
+  "projectFileVersion": 4,
+  "sourceFiles": [
+    "**/*.yarn"
+  ],
+  "baseLanguage": "en",
+  "definitions": [
+    "Dressmaker.ysls.json",
+    "WizardLibrary.ysls.json"
+  ],
+  "projectName": "A Moth to the Splendor",
+  "authorName": [
+    "Ambrosia"
+  ]
+}
