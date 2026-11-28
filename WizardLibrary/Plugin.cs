@@ -17,7 +17,7 @@ using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 namespace WizardLibrary
 {
-    [BepInPlugin("ambrosia.wizardlibrary", "Wizard Library", "0.2.0")]
+    [BepInPlugin("ambrosia.wizardlibrary", "Wizard Library", "0.2.1")]
     [BepInDependency("yuu.dressmaker.mods")]
     public class Plugin : BaseUnityPlugin
     {
@@ -98,17 +98,18 @@ namespace WizardLibrary
             yarn = Resources.FindObjectsOfTypeAll<DialogueRunner>().FirstOrDefault();
             yarn.AddCommandHandler("CastNight", ChangeToNight);
             yarn.AddCommandHandler("CastDay", ChangeToDay);
-            yarn.AddCommandHandler<string, string, string>("Summon", SetNpcPortrait);
-            yarn.AddCommandHandler<string, string>("CallForth", SetNpcName);
+            yarn.AddCommandHandler<string, string, string>("Summon", SummonNpc);
+            yarn.AddCommandHandler<string, string>("SummonFamiliar", SummonVanillaClient);
+            yarn.AddCommandHandler<string, string>("CallForth", CallForthName);
 
 
-            yarn.AddFunction<string, string, bool>("ScryFlag", ReadFlag);
-            yarn.AddCommandHandler<string, string, bool>("TransmuteFlag", SetFlag);
+            yarn.AddFunction<string, string, bool>("ScryFlag", ScryFlag);
+            yarn.AddCommandHandler<string, string, bool>("TransmuteFlag", TransmuteFlag);
 
-            yarn.AddCommandHandler<string, string>("Disintegrate", DeletePersistentVariable);
+            yarn.AddCommandHandler<string, string>("Disintegrate", DisintegrateVariable);
 
-            yarn.AddFunction<string, string, int>("ScryCounter", ReadCounter);
-            yarn.AddCommandHandler<string, string, int>("TransmuteCounter", SetCounter);
+            yarn.AddFunction<string, string, int>("ScryCounter", ScryCounter);
+            yarn.AddCommandHandler<string, string, int>("TransmuteCounter", TransmuteCounter);
 
             LoadSpells();
             //yarn.AddCommandHandler<string, string>("SetSongFromFile", SetSongFromFile);
@@ -116,27 +117,27 @@ namespace WizardLibrary
             Logger.LogInfo("Wizard Library set up complete.");
         }
 
-        public bool ReadFlag(string modName, string flag)
+        public bool ScryFlag(string modName, string flag)
         {
             return mod.SaveData.Read<bool>($"{modName}.{flag}");
         }
 
-        public void SetFlag(string modName, string flag, bool value)
+        public void TransmuteFlag(string modName, string flag, bool value)
         {
             mod.SaveData.Write($"{modName}.{flag}", value);
         }
 
-        public void DeletePersistentVariable(string modName, string flag)
+        public void DisintegrateVariable(string modName, string flag)
         {
             mod.SaveData.Delete($"{modName}.{flag}");
         }
 
-        public int ReadCounter(string modName, string counter)
+        public int ScryCounter(string modName, string counter)
         {
             return mod.SaveData.Read<int>($"{modName}.{counter}");
         }
 
-        public void SetCounter(string modName, string counter, int value)
+        public void TransmuteCounter(string modName, string counter, int value)
         {
             mod.SaveData.Write($"{modName}.{counter}", value);
         }
@@ -152,7 +153,7 @@ namespace WizardLibrary
             NightBackground.color = Color.white.WithAlpha(0f);
         }
 
-        public void SetNpcPortrait(string modname, string npcName, string expression)
+        public void SummonNpc(string modname, string npcName, string expression)
         {
             var mod = RetrieveSpellList(modname);
 
@@ -177,7 +178,7 @@ namespace WizardLibrary
             }
         }
 
-        public void SetNpcName(string modname, string npcName)
+        public void CallForthName(string modname, string npcName)
         {
             var mod = RetrieveSpellList(modname);
 
@@ -187,6 +188,26 @@ namespace WizardLibrary
             }
 
             CharacterName.text = mod.GetNpcName(npcName);
+        }
+
+        public void SummonVanillaClient(string npcName, string expression)
+        {
+            var character = CharacterDefinition.AllCharacterDefinitions.FirstOrDefault(x=> x.name.Equals(npcName, StringComparison.InvariantCultureIgnoreCase));
+            CharacterName.text = character.name;
+            
+            switch(expression.Trim().ToLower())
+            {
+                case "happy":
+                    CharacterPortrait.sprite = character.happySprite;
+                    break;
+                case "sad":
+                    CharacterPortrait.sprite = character.sadSprite;
+                    break;
+                case "neutral":
+                    CharacterPortrait.sprite = character.sprite;
+                    break;
+            }
+
         }
 
         public SpellList RetrieveSpellList(string modName)
