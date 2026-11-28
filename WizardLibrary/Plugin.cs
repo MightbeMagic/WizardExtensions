@@ -17,7 +17,7 @@ using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 namespace WizardLibrary
 {
-    [BepInPlugin("ambrosia.wizardlibrary", "Wizard Library", "0.2.1")]
+    [BepInPlugin("ambrosia.wizardlibrary", "Wizard Library", "0.3.0")]
     [BepInDependency("yuu.dressmaker.mods")]
     public class Plugin : BaseUnityPlugin
     {
